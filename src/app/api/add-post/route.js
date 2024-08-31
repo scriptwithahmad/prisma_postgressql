@@ -6,6 +6,13 @@ export async function POST(request) {
 
   const { title, content } = res.formData;
 
+  if (!title || !content) {
+    return NextResponse.json(
+      { error: "Title and content are required" },
+      { status: 400 }
+    );
+  }
+
   const result = await prisma.post.create({
     data: {
       title,
@@ -13,11 +20,11 @@ export async function POST(request) {
       published: true,
       author: {
         create: {
-          name: "Usman Ashfaq",
+          name: "Muhammad Ahmad",
         },
       },
     },
   });
 
-  return NextResponse.json(res);
+  return NextResponse.json({ result }, { status: 200 });
 }
