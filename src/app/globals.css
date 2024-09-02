@@ -18,11 +18,26 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: #0f172a;
+  /* background: #0f172a; */
+  background: #000;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+h2 {
+  background: -webkit-linear-gradient(left, gray, #475569);
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 6px transparent;
+  color: black;
+}
+
+span {
+  background: -webkit-linear-gradient(left, #a855f7, #7e22ce, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 6px transparent;
+  color: black;
 }
